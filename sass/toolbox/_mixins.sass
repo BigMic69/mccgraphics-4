@@ -1,0 +1,270 @@
+// @import "compass/reset"
+
+// -------------------->>
+//   BOX CONTAINERS
+// -------------------->>
+=box__full--cush
+  width: 96%
+  height: auto
+  margin: 0 auto
+  padding: 0
+
+=box__full
+  width: 100%
+  height: auto
+  margin: 0 auto
+  padding: 0
+
+=box__three-fourth
+  width: 75%
+  height: auto
+  margin: 0 auto
+  padding: 0
+
+=box__half
+  width: 50%
+  height: auto
+  margin: 0 auto
+  padding: 0
+
+=box__quarter
+  width: 25%
+  height: auto
+  margin: 0 auto
+  padding: 0
+
+=box__fixed--bottom
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: auto
+  margin: 0 auto
+  padding: 20px 0
+
+// -------------------->>
+//   CSS GRID
+// -------------------->>
+
+=grid--small
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  grid-gap: 10px
+
+=grid__media--lg
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  grid-gap: 20px 10px
+
+  // margin-bottom: 30px
+  @media (min-width: 600px)
+    grid-template-columns: 1fr 1fr
+
+  @media (min-width: 900px)
+    grid-template-columns: repeat(4, 1fr)
+
+// -------------------->>
+//   FLEXBOX
+// -------------------->>
+
+=column__flex
+  display: flex
+  flex-direction: column
+  margin-bottom: 6vh
+  padding: 10px 5px
+
+// -------------------->>
+//   BACKGROUNDS
+// -------------------->>
+
+=bg__media
+  min-height: 30vh
+
+  @media (min-width: 600px)
+    min-height: 40vh
+
+=bg__img--cover($source)
+  background-image: url($source)
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  background-attachment: scroll
+
+// -------------------->>
+//   MARGINS
+// -------------------->>
+
+=nocush
+  margin: 0
+  padding: 0
+
+=cush__box--sm
+  margin: 0
+  padding: 3vh 5px
+
+=cush__box--md
+  margin: 0
+  padding: 5vh 10px
+
+=margin-bottom__five-vh
+  margin-bottom: 5vh
+
+=margin-bottom__ten-vh
+  margin-bottom: 10vh
+
+=padding-bottom__five-vh
+  padding-bottom: 5vh
+
+=padding-bottom__ten-vh
+  padding-bottom: 10vh
+
+=padding__box
+  padding: 10vh 10px
+
+// -------------------->>
+//   HEADINGS
+// -------------------->>
+
+=title__heading--one
+  font-size: 1.8rem
+  font-weight: bold
+  letter-spacing: 0.1rem
+  text-align: center
+  // text-shadow: 2px 1px $clr__trim
+
+  @media (min-width: 600px)
+    font-size: 2.5rem
+
+  @media (min-width: 900px)
+    font-size: 3.3rem
+
+=title__heading--two
+  padding: 8px
+  font-size: 1.6rem
+  font-weight: bold
+  letter-spacing: 0.1rem
+
+  @media (min-width: 600px)
+    font-size: 1.8rem
+
+  @media (min-width: 900px)
+    font-size: 2.6rem
+
+=title__heading--three
+  padding: 8px
+  font-size: 1.4rem
+  font-weight: bold
+  letter-spacing: 0.1rem
+
+  @media (min-width: 600px)
+    font-size: 1.5rem
+
+  @media (min-width: 900px)
+    font-size: 2rem
+
+// -------------------->>
+//   TEXT
+// -------------------->>
+
+=font__fam--primary
+  font-family: "Ubuntu", Cormorant, Merriweather
+
+=font-size__text--media
+  padding: 20px 10px
+  font-size: 0.9rem
+
+  @media (min-width: 600px)
+    padding: 20px 30px
+    font-size: 1rem
+
+  @media (min-width: 900px)
+    font-size: 1.2rem
+
+=font-size__list--media
+  padding: 10px 10px 10px 5vw
+  font-size: 0.8rem
+
+  @media (min-width: 600px)
+    font-size: 1rem
+
+  @media (min-width: 900px)
+    font-size: 1.2rem
+
+=text__align--media
+  text-align: center
+
+  @media (min-width: 900px)
+    padding: 10px 20px
+    text-align: left
+
+=text__shadow--light
+  text-shadow: 0.7px 0.5px #f6f6f6
+
+// -------------------->>
+//   COLOR PALLET
+// -------------------->>
+
+=clr__combo--dark-light
+  background: $clr__dark
+  color: $clr__light
+
+=clr__combo--light-dark
+  background: $clr__light
+  color: $clr__dark
+
+=clr__combo--grey
+  background: #8b8b8b
+  color: $clr__dark
+
+// -------------------->>
+//   BORDERS/SHADOW
+// -------------------->>
+=border__shadow--trim
+  border: 1px solid $clr__trim
+  border-radius: 10px
+  box-shadow: 2px 2px 3px rgba(#d7722f, 0.4)
+
+=border__shadow--dark
+  border: 1px solid $clr__dark
+  border-radius: 10px
+  box-shadow: 2px 2px 3px rgba(#d1d1d1, 0.4)
+
+=border__shadow--light
+  border: 1px solid $clr__light
+  border-radius: 10px
+  box-shadow: 2px 2px 3px rgba(#d1d1d1, 0.4)
+
+=box__border-shadow--corner-bo-ri
+  border-bottom: 1px solid $clr__dark
+  border-right: 1px solid $clr__dark
+  box-shadow: 2px 2px 3px rgba(#d1d1d1, 0.4)
+
+=border-bottom__color--trim
+  border-bottom: 2px solid $clr__trim
+
+// -------------------->>
+//   BEM MIXINS
+// -------------------->>
+=element($element)
+  &__#{$element}
+    @content
+
+=modifier($modifier)
+  &--#{$modifier}
+    @content
+
+// -------------------->>
+//   TRANSITIONS
+// -------------------->>
+=trans-0
+  transition: all 0.3s ease-in-out 0.1s
+
+=trans-1
+  transition: all 1s ease-in-out 0.1s
+
+=trans-2
+  transition: all 2s ease-in-out 0.1s
+
+=trans-3
+  transition: all 3s ease-in-out 0.1s

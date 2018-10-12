@@ -1,0 +1,62 @@
+.imgContainer
+  grid-column: span 1
+  display: grid
+  grid-template-columns: 1fr
+  grid-auto-rows: auto
+  grid-gap: 3vh 10px
+  border-bottom: 1px solid #f7f7f7
+  border-top: 1px solid #f7f7f7
+  +box__full
+  +clr__combo--dark-light
+  +cush__box--md
+  @media (min-width: 993px)
+    grid-template-columns: 2fr 1fr
+    padding-top: 10vh
+
+
+.main-img
+  grid-column: span 1
+  // +box__full
+  +border__shadow--light
+  img
+    grid-column: span 1
+    // +box__full
+  @media (min-width: 768px)
+    +box__three-fourth
+  @media (min-width: 993px)
+    +box__three-fourth
+
+.imgs
+  grid-column: span 1
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: auto
+  grid-gap: 10px 5px
+  border-radius: 10px
+  background: #636363
+  overflow-x: scroll
+  max-height: 30vh
+  +cush__box--sm
+
+  img
+    grid-column: span 2
+    +trans-0
+
+    &:hover
+      border: 1px solid #f8f8f8
+
+  @media (min-width: 993px)
+    grid-template-columns: repeat(8, 1fr)
+    overflow-x: hidden
+    overflow-y: scroll
+    max-height: 35vh
+    img
+      grid-column: span 4
+
+@keyframes FadeIn
+  to
+    opacity: 1
+
+.fade-in
+  opacity: 0
+  animation: FadeIn 0.5s ease-in 1 forwards
